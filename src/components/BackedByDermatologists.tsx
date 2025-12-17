@@ -1,0 +1,139 @@
+"use client";
+
+import { useRef } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const doctors = [
+  {
+    name: "Dr. Anjali Kapoor",
+    qualification: "MD, Dermatology",
+    specialty: "Aesthetic Medicine & Lasers",
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=600&fit=crop"
+  },
+  {
+    name: "Dr. Rahul Sharma",
+    qualification: "MBBS, DVD",
+    specialty: "Clinical Dermatology",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=600&fit=crop"
+  },
+  {
+    name: "Dr. Sneha Gupta",
+    qualification: "MD, Cosmetology",
+    specialty: "Injectables & Facial Aesthetics",
+    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=600&fit=crop"
+  },
+  {
+    name: "Dr. Vikram Singh",
+    qualification: "MD, Dermatology",
+    specialty: "Hair Restoration Expert",
+    image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&h=600&fit=crop"
+  }
+];
+
+export default function BackedByDermatologists() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 300;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  return (
+    <section className="w-full bg-[#FCF4E9] py-24 border-b border-[#ECDCCD] px-6 sm:px-10 lg:px-16 xl:px-20">
+      <div className="max-w-[1440px] mx-auto">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+
+          {/* LEFT COLUMN: Text Content */}
+          <div className="w-full lg:w-1/3 flex flex-col justify-between lg:h-[420px]">
+            <div>
+              <span className="font-basis text-[#F6544A] text-sm font-semibold tracking-widest uppercase mb-3 block">
+                Medical Excellence
+              </span>
+              <h2 className="font-inferi text-[42px] leading-[50px] font-normal text-black mb-6">
+                Backed by Experienced Dermatologists
+              </h2>
+              <p className="font-basis text-gray-700 text-lg font-light leading-relaxed">
+                Our clinics are led by dermatologists who specialise in aesthetic medicine — supported by continuous training, peer reviews, and shared best practices across the Bold network.
+              </p>
+            </div>
+
+            {/* Navigation Buttons */}
+            <div className="hidden lg:flex gap-4 mt-12">
+              <button
+                onClick={() => scroll('left')}
+                className="w-12 h-12 rounded-full border border-black text-black flex items-center justify-center hover:bg-black hover:text-white transition-all"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button
+                onClick={() => scroll('right')}
+                className="w-12 h-12 rounded-full border border-black text-black flex items-center justify-center hover:bg-black hover:text-white transition-all"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
+          </div>
+
+          {/* RIGHT COLUMN: Doctor Profile Carousel */}
+          <div className="w-full lg:w-2/3 overflow-hidden">
+            <div
+              ref={scrollRef}
+              className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {doctors.map((doc, index) => (
+                <div key={index} className="flex-none w-[260px] sm:w-[300px] snap-start group cursor-pointer">
+                  {/* Doctor Image */}
+                  <div className="relative w-full aspect-[4/5] rounded-none overflow-hidden mb-0 bg-gray-200">
+                    <Image
+                      src={doc.image}
+                      alt={doc.name}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Doctor Details Card - WHITE BG */}
+                  <div className="bg-white p-6 shadow-sm">
+                    <h3 className="font-inferi text-2xl text-black mb-1 leading-tight group-hover:text-[#F6544A] transition-colors">
+                      {doc.name}
+                    </h3>
+                    <span className="font-basis text-xs font-bold tracking-widest text-gray-500 uppercase block mb-3">
+                      {doc.qualification}
+                    </span>
+                    <p className="font-basis text-[15px] text-gray-600 leading-snug">
+                      {doc.specialty}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile Navigation */}
+            <div className="flex lg:hidden justify-center gap-4 mt-6">
+              <button
+                onClick={() => scroll('left')}
+                className="w-10 h-10 rounded-full border border-black text-black flex items-center justify-center"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                onClick={() => scroll('right')}
+                className="w-10 h-10 rounded-full border border-black text-black flex items-center justify-center"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
