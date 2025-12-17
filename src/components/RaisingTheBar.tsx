@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Play } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const listItems = [
   "Doctor-approved treatment pathways",
@@ -9,8 +12,28 @@ const listItems = [
 ];
 
 export default function RaisingTheBar() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="w-full px-6 sm:px-10 lg:px-16 xl:px-20 bg-[#FFF9EC]">
+    <section ref={sectionRef} className="w-full px-6 sm:px-10 lg:px-16 xl:px-20 bg-[#FFF9EC]">
       <div className="flex flex-col lg:flex-row">
 
         {/* LEFT SIDE: Image */}
@@ -18,7 +41,7 @@ export default function RaisingTheBar() {
           <div className="pt-16 lg:pt-24">
             {/* Optional top content/link can go here */}
           </div>
-          <div className="relative h-[450px] lg:h-[550px] w-full mt-4">
+          <div className="relative w-full mt-4 aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]">
             <Image
               src="https://cdn.prod.website-files.com/663bbf664cbd4f9377a776c6/672dfc57bfdc38f7257ef113_main%20image_1_11zon.webp"
               alt="Raising The Bar"
@@ -38,7 +61,7 @@ export default function RaisingTheBar() {
             <div className="max-w-lg">
 
               {/* Title */}
-              <h2 className="font-inferi text-[36px] lg:text-[42px] leading-[1.15] tracking-tight text-black mb-6">
+              <h2 className={`font-inferi text-[36px] lg:text-[42px] leading-[1.15] tracking-tight text-black mb-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 Raising the Bar in Aesthetic Dermatology
               </h2>
 
@@ -46,7 +69,7 @@ export default function RaisingTheBar() {
               <div className="border-t border-[#D4D0C8] mb-6"></div>
 
               {/* Description */}
-              <p className="font-basis text-base text-gray-600 leading-relaxed mb-6">
+              <p className={`font-basis text-base text-gray-600 leading-relaxed mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 Bold Clinics was built to fix what&apos;s broken in aesthetic care. No more inconsistent outcomes, over-commercialisation, and lack of medical accountability.
               </p>
 
@@ -54,14 +77,14 @@ export default function RaisingTheBar() {
               <div className="border-t border-[#D4D0C8] mb-6"></div>
 
               {/* Subtitle */}
-              <p className="font-basis text-base text-black font-medium mb-4">
+              <p className={`font-basis text-base text-black font-medium mb-4 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 Every Bold clinic follows the same:
               </p>
 
               {/* Bullet Points */}
               <ul className="flex flex-col gap-3 mb-8">
                 {listItems.map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
+                  <li key={idx} className={`flex items-center gap-3 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`} style={{ transitionDelay: `${300 + idx * 100}ms` }}>
                     <div className="w-1.5 h-1.5 rounded-full bg-[#F6544A] flex-shrink-0" />
                     <span className="text-lg font-inferi text-black tracking-tight">
                       {item}

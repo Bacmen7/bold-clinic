@@ -12,7 +12,7 @@ export default function TopHeader() {
     <div className="bg-[#BFCEDE] py-3 px-4 relative">
       <div className="max-w-7xl mx-auto flex justify-center items-center">
         <p className="text-[#18454B] text-[16px] italic">
-       Trusted dermatology care for all your skin, hair & nail concerns at Bold Clinic....
+          Trusted dermatology care for all your skin, hair & nail concerns at Bold Clinic...
         </p>
       </div>
       <button

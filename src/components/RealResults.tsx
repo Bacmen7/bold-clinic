@@ -1,85 +1,67 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const tags = ["Skin", "Hair", "Laser", "Injectables"];
+const testimonials = [
+  {
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=600&fit=crop",
+    quote: "Professional laser treatment helped reduce my acne scars significantly in just 3 sessions."
+  },
+  {
+    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=600&fit=crop",
+    quote: "The dermatologist took time to understand my skin concerns and created a personalized treatment plan."
+  },
+  {
+    image: "https://images.unsplash.com/photo-1616391182219-e080b4d1043a?w=400&h=600&fit=crop",
+    quote: "My hair restoration journey with Bold Clinics has given me confidence I never thought I'd have again."
+  }
+];
 
 export default function RealResults() {
   return (
-    <section className="w-full bg-[#ECDCCD] py-16 lg:py-24 px-6 sm:px-10 lg:px-16 xl:px-20 border-b border-[#FCF4E9]">
+    <section className="w-full bg-[#F5EEE6] py-16 lg:py-24 px-6 sm:px-10 lg:px-16 xl:px-20">
       <div className="max-w-[1440px] mx-auto">
 
-        {/* Top Label */}
-        <div className="mb-12">
-          <span className="font-basis text-[#F6544A] text-sm font-semibold tracking-widest uppercase">
-            Our Commitment
-          </span>
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="font-inferi text-[36px] lg:text-[48px] leading-tight text-black mb-6">
+            Real Results. Real Confidence.
+          </h2>
+          <p className="font-basis text-gray-700 text-base lg:text-lg max-w-3xl mx-auto">
+            Before–after galleries, patient stories, and outcome-based visuals — always ethical, always honest.
+          </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
-
-          {/* LEFT: Before/After Images */}
-          <div className="w-full lg:w-1/2 flex gap-4">
-            {/* Before Image */}
-            <div className="flex-1 relative">
-              <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-200">
+        {/* Three Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
+          {testimonials.map((item, index) => (
+            <div key={index} className="bg-[#F5E6D3] overflow-hidden group">
+              {/* Image Container */}
+              <div className="relative aspect-[3/4] w-full bg-gray-100 overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&h=600&fit=crop"
-                  alt="Before Treatment"
+                  src={item.image}
+                  alt={`Testimonial ${index + 1}`}
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
+                {/* Quote Overlay at Bottom */}
+                <div className="absolute bottom-0 left-0 right-0 bg-[#F5E6D3]/95 p-4">
+                  <p className="font-basis text-sm text-gray-800 leading-relaxed">
+                    "{item.quote}"
+                  </p>
+                </div>
               </div>
-              <span className="absolute bottom-4 left-4 font-basis text-xs font-bold tracking-widest uppercase text-white bg-black/50 px-3 py-1.5">
-                Before
-              </span>
             </div>
+          ))}
+        </div>
 
-            {/* After Image */}
-            <div className="flex-1 relative">
-              <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-200">
-                <Image
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=600&fit=crop"
-                  alt="After Treatment"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <span className="absolute bottom-4 left-4 font-basis text-xs font-bold tracking-widest uppercase text-white bg-black/50 px-3 py-1.5">
-                After
-              </span>
-            </div>
-          </div>
-
-          {/* RIGHT: Content */}
-          <div className="w-full lg:w-1/2">
-            <h2 className="font-inferi text-[32px] lg:text-[42px] leading-[1.15] text-black mb-4">
-              Real Results.<br />Real Confidence.
-            </h2>
-
-            <p className="font-basis text-gray-700 text-base lg:text-lg leading-relaxed mb-6">
-              Before–after galleries, patient stories, and outcome-based visuals — always ethical, always honest.
-            </p>
-
-            {/* Tags */}
-            <div className="flex flex-wrap gap-3 mb-8">
-              {tags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="font-basis text-sm text-black border border-black/30 px-4 py-2 rounded-none bg-white/50"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            <Link
-              href="/results"
-              className="inline-flex items-center px-8 py-4 bg-[#F6544A] text-white rounded-full font-basis text-sm font-semibold tracking-wider uppercase hover:opacity-90 transition-all shadow-lg hover:shadow-xl"
-            >
-              View Results
-            </Link>
-          </div>
-
+        {/* View Results Button */}
+        <div className="text-center">
+          <Link
+            href="/results"
+            className="inline-flex items-center px-8 py-4 bg-[#F6544A] text-white rounded-full font-basis text-sm font-semibold tracking-wider uppercase hover:opacity-90 transition-all shadow-lg hover:shadow-xl"
+          >
+            View Results
+          </Link>
         </div>
 
       </div>

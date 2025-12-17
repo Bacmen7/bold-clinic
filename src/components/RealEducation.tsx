@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const educationItems = [
   {
@@ -54,9 +55,15 @@ export default function RealEducation() {
                 {/* Overlay on Hover */}
                 <div className="absolute inset-0 bg-[#F6544A]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-center font-inferi text-2xl text-black group-hover:text-[#F6544A] transition-colors">
-                {item.title}
-              </h3>
+              <div className="flex items-center justify-between">
+                <h3 className="font-inferi text-xl lg:text-2xl text-black group-hover:text-[#F6544A] transition-colors flex-1">
+                  {item.title}
+                </h3>
+                <ArrowRight
+                  size={24}
+                  className="text-gray-400 group-hover:text-[#F6544A] group-hover:translate-x-1 transition-all flex-shrink-0 ml-3"
+                />
+              </div>
             </div>
           ))}
         </div>

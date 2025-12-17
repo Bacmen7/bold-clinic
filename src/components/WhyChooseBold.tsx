@@ -32,7 +32,7 @@ const items = [
 ];
 
 export default function WhyChooseBold() {
-  const [activeId, setActiveId] = useState(1);
+  const [activeId, setActiveId] = useState<number | null>(null);
 
   return (
     <section className="w-full bg-[#ECDCCD] py-20 lg:py-24 border-b border-[#FCF4E9] px-6 sm:px-10 lg:px-16 xl:px-20">
@@ -40,14 +40,14 @@ export default function WhyChooseBold() {
 
         {/* Header */}
         <div className="mb-12 lg:mb-16">
-          <span className="font-basis text-[#F6544A] text-sm font-semibold tracking-widest uppercase mb-3 block">
+          <span className="font-basis text-[#F6544A] text-[10px] font-semibold tracking-widest uppercase mb-3 block">
             Our Philosophy
           </span>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-            <h2 className="font-inferi text-[36px] lg:text-[42px] leading-[1.15] font-normal text-black max-w-xl">
+            <h2 className="font-inferi text-[24px] lg:text-[28px] leading-[1.15] font-normal text-black max-w-xl">
               Why Choose Bold Clinics?
             </h2>
-            <p className="font-basis text-gray-700 text-base lg:text-lg font-light leading-relaxed max-w-lg">
+            <p className="font-basis text-gray-700 text-xs lg:text-sm font-light leading-relaxed max-w-lg">
               We are redefining aesthetic care with transparency, expertise, and a commitment to real results.
             </p>
           </div>
@@ -62,14 +62,14 @@ export default function WhyChooseBold() {
                 key={item.id}
                 onClick={() => setActiveId(item.id)}
                 className={`
-                  border cursor-pointer transition-all duration-300
+                  border cursor-pointer transition-all duration-300 min-h-[100px]
                   ${isActive
                     ? 'bg-white border-[#F6544A] shadow-lg'
                     : 'bg-white/50 border-transparent hover:bg-white hover:border-gray-200'
                   }
                 `}
               >
-                <div className="p-6 lg:p-8">
+                <div className="p-5 lg:p-6">
                   <div className="flex items-start gap-4">
                     {/* Number/Check Icon */}
                     <div className={`
@@ -90,7 +90,7 @@ export default function WhyChooseBold() {
                     {/* Content */}
                     <div className="flex-1">
                       <h3 className={`
-                        font-inferi text-xl lg:text-2xl leading-tight mb-2
+                        font-inferi text-base lg:text-lg leading-tight mb-2
                         transition-colors duration-300
                         ${isActive ? 'text-[#F6544A]' : 'text-black'}
                       `}>
@@ -101,7 +101,7 @@ export default function WhyChooseBold() {
                         overflow-hidden transition-all duration-500
                         ${isActive ? 'max-h-40 opacity-100 mt-3' : 'max-h-0 opacity-0'}
                       `}>
-                        <p className="font-basis text-gray-600 text-sm lg:text-base leading-relaxed">
+                        <p className="font-basis text-gray-600 text-[10px] lg:text-xs leading-relaxed">
                           {item.description}
                         </p>
                       </div>

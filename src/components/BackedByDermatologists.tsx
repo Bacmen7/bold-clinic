@@ -80,17 +80,46 @@ export default function BackedByDermatologists() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: Doctor Profile Carousel */}
-          <div className="w-full lg:w-2/3 overflow-hidden">
-            <div
-              ref={scrollRef}
-              className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
+          {/* RIGHT COLUMN: Doctor Profile Grid/Carousel */}
+          <div className="w-full lg:w-2/3">
+            {/* Mobile: Horizontal Scroll */}
+            <div className="md:hidden overflow-x-auto scrollbar-hide -mx-6 px-6">
+              <div className="flex gap-4 pb-4">
+                {doctors.map((doc, index) => (
+                  <div key={index} className="group cursor-pointer flex-shrink-0 w-[200px]">
+                    {/* Doctor Image */}
+                    <div className="relative w-full h-[260px] rounded-none overflow-hidden mb-0 bg-gray-200">
+                      <Image
+                        src={doc.image}
+                        alt={doc.name}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+
+                    {/* Doctor Details Card - TRANSPARENT BG - Fixed Height */}
+                    <div className="bg-transparent p-3 h-[90px] flex flex-col">
+                      <h3 className="font-inferi text-base text-black mb-1 leading-tight group-hover:text-[#F6544A] transition-colors">
+                        {doc.name}
+                      </h3>
+                      <span className="font-basis text-[10px] font-bold tracking-widest text-gray-600 uppercase block mb-1">
+                        {doc.qualification}
+                      </span>
+                      <p className="font-basis text-xs text-gray-700 leading-snug flex-1">
+                        {doc.specialty}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Desktop: Grid */}
+            <div className="hidden md:grid grid-cols-4 gap-6">
               {doctors.map((doc, index) => (
-                <div key={index} className="flex-none w-[260px] sm:w-[300px] snap-start group cursor-pointer">
+                <div key={index} className="group cursor-pointer">
                   {/* Doctor Image */}
-                  <div className="relative w-full aspect-[4/5] rounded-none overflow-hidden mb-0 bg-gray-200">
+                  <div className="relative w-full h-[260px] rounded-none overflow-hidden mb-0 bg-gray-200">
                     <Image
                       src={doc.image}
                       alt={doc.name}
@@ -99,36 +128,20 @@ export default function BackedByDermatologists() {
                     />
                   </div>
 
-                  {/* Doctor Details Card - WHITE BG */}
-                  <div className="bg-white p-6 shadow-sm">
-                    <h3 className="font-inferi text-2xl text-black mb-1 leading-tight group-hover:text-[#F6544A] transition-colors">
+                  {/* Doctor Details Card - TRANSPARENT BG - Fixed Height */}
+                  <div className="bg-transparent p-3 h-[90px] flex flex-col">
+                    <h3 className="font-inferi text-base text-black mb-1 leading-tight group-hover:text-[#F6544A] transition-colors">
                       {doc.name}
                     </h3>
-                    <span className="font-basis text-xs font-bold tracking-widest text-gray-500 uppercase block mb-3">
+                    <span className="font-basis text-[10px] font-bold tracking-widest text-gray-600 uppercase block mb-1">
                       {doc.qualification}
                     </span>
-                    <p className="font-basis text-[15px] text-gray-600 leading-snug">
+                    <p className="font-basis text-xs text-gray-700 leading-snug flex-1">
                       {doc.specialty}
                     </p>
                   </div>
                 </div>
               ))}
-            </div>
-
-            {/* Mobile Navigation */}
-            <div className="flex lg:hidden justify-center gap-4 mt-6">
-              <button
-                onClick={() => scroll('left')}
-                className="w-10 h-10 rounded-full border border-black text-black flex items-center justify-center"
-              >
-                <ChevronLeft size={18} />
-              </button>
-              <button
-                onClick={() => scroll('right')}
-                className="w-10 h-10 rounded-full border border-black text-black flex items-center justify-center"
-              >
-                <ChevronRight size={18} />
-              </button>
             </div>
           </div>
 
