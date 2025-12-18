@@ -56,7 +56,10 @@ export default function RealEducation() {
                 <div className="absolute inset-0 bg-[#F6544A]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="flex items-center justify-between">
-                <h3 className="font-inferi text-xl lg:text-2xl text-black group-hover:text-[#F6544A] transition-colors flex-1">
+                <h3
+                  style={{ fontSize: '30px', lineHeight: '36px' }}
+                  className="font-inferi text-black group-hover:text-[#F6544A] transition-colors flex-1"
+                >
                   {item.title}
                 </h3>
                 <ArrowRight
