@@ -60,17 +60,17 @@ export default function WhyChooseBold() {
             return (
               <div
                 key={item.id}
-                onClick={() => setActiveId(item.id)}
+                onClick={() => setActiveId(activeId === item.id ? null : item.id)}
                 className={`
-                  border cursor-pointer transition-all duration-300 min-h-[100px]
+                  border cursor-pointer transition-all duration-300
                   ${isActive
                     ? 'bg-white border-[#F6544A] shadow-lg'
                     : 'bg-white/50 border-transparent hover:bg-white hover:border-gray-200'
                   }
                 `}
               >
-                <div className="p-5 lg:p-6">
-                  <div className="flex items-start gap-4">
+                <div className="p-3 lg:p-4">
+                  <div className="flex items-center gap-4">
                     {/* Number/Check Icon */}
                     <div className={`
                       w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0
@@ -90,7 +90,7 @@ export default function WhyChooseBold() {
                     {/* Content */}
                     <div className="flex-1">
                       <h3 className={`
-                        font-inferi text-base lg:text-lg leading-tight mb-2
+                        font-inferi text-[20px] lg:text-[26px] leading-tight mb-2
                         transition-colors duration-300
                         ${isActive ? 'text-[#F6544A]' : 'text-black'}
                       `}>

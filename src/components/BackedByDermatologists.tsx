@@ -45,7 +45,7 @@ export default function BackedByDermatologists() {
   };
 
   return (
-    <section className="w-full bg-[#FCF4E9] py-24 border-b border-[#ECDCCD] px-6 sm:px-10 lg:px-16 xl:px-20">
+    <section className="w-full bg-[#ECDCCD] py-24 border-b border-[#D4C4B5] px-6 sm:px-10 lg:px-16 xl:px-20">
       <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
 
@@ -86,26 +86,26 @@ export default function BackedByDermatologists() {
             <div className="md:hidden overflow-x-auto scrollbar-hide -mx-6 px-6">
               <div className="flex gap-4 pb-4">
                 {doctors.map((doc, index) => (
-                  <div key={index} className="group cursor-pointer flex-shrink-0 w-[200px]">
+                  <div key={index} className="group cursor-pointer flex-shrink-0 w-[200px] bg-white rounded-lg overflow-hidden">
                     {/* Doctor Image */}
-                    <div className="relative w-full h-[260px] rounded-none overflow-hidden mb-0 bg-gray-200">
+                    <div className="relative w-full aspect-[3/4] overflow-hidden bg-gray-100">
                       <Image
                         src={doc.image}
                         alt={doc.name}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                       />
                     </div>
 
-                    {/* Doctor Details Card - TRANSPARENT BG - Fixed Height */}
-                    <div className="bg-transparent p-3 h-[90px] flex flex-col">
+                    {/* Doctor Details Card */}
+                    <div className="bg-white p-3 flex flex-col">
                       <h3 className="font-inferi text-base text-black mb-1 leading-tight group-hover:text-[#F6544A] transition-colors">
                         {doc.name}
                       </h3>
                       <span className="font-basis text-[10px] font-bold tracking-widest text-gray-600 uppercase block mb-1">
                         {doc.qualification}
                       </span>
-                      <p className="font-basis text-xs text-gray-700 leading-snug flex-1">
+                      <p className="font-basis text-xs text-gray-700 leading-snug">
                         {doc.specialty}
                       </p>
                     </div>
@@ -114,29 +114,32 @@ export default function BackedByDermatologists() {
               </div>
             </div>
 
-            {/* Desktop: Grid */}
-            <div className="hidden md:grid grid-cols-4 gap-6">
+            {/* Desktop: Carousel */}
+            <div
+              ref={scrollRef}
+              className="hidden md:flex overflow-x-auto scrollbar-hide gap-5 pb-4"
+            >
               {doctors.map((doc, index) => (
-                <div key={index} className="group cursor-pointer">
+                <div key={index} className="group cursor-pointer bg-white rounded-lg overflow-hidden flex-shrink-0 w-[200px]">
                   {/* Doctor Image */}
-                  <div className="relative w-full h-[260px] rounded-none overflow-hidden mb-0 bg-gray-200">
+                  <div className="relative w-full h-[220px] overflow-hidden bg-gray-100">
                     <Image
                       src={doc.image}
                       alt={doc.name}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
 
-                  {/* Doctor Details Card - TRANSPARENT BG - Fixed Height */}
-                  <div className="bg-transparent p-3 h-[90px] flex flex-col">
+                  {/* Doctor Details Card */}
+                  <div className="bg-white p-3 flex flex-col">
                     <h3 className="font-inferi text-base text-black mb-1 leading-tight group-hover:text-[#F6544A] transition-colors">
                       {doc.name}
                     </h3>
                     <span className="font-basis text-[10px] font-bold tracking-widest text-gray-600 uppercase block mb-1">
                       {doc.qualification}
                     </span>
-                    <p className="font-basis text-xs text-gray-700 leading-snug flex-1">
+                    <p className="font-basis text-xs text-gray-700 leading-snug">
                       {doc.specialty}
                     </p>
                   </div>
