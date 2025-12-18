@@ -42,7 +42,7 @@ export default function ExpandingTreatments() {
     <section className="w-full bg-[#FCF4E9] py-20 lg:py-24 overflow-hidden border-b border-[#ECDCCD] px-6 sm:px-10 lg:px-16 xl:px-20">
       <div className="max-w-[1440px] mx-auto">
         <div className="text-center mb-16">
-          <span className="font-basis text-[#F6544A] text-sm font-semibold tracking-widest uppercase mb-3 block">
+          <span className="font-basis text-[#F6544A] text-base lg:text-lg font-semibold tracking-widest uppercase mb-3 block">
             Our Expertise
           </span>
           <h2 className="font-inferi text-[42px] leading-[50px] font-normal text-black">
@@ -96,10 +96,11 @@ export default function ExpandingTreatments() {
                         {cat.subtitle}
                       </p>
                       <h3 className={`
-                        font-inferi text-white text-3xl lg:text-4xl
+                        font-inferi text-white
                         transition-all duration-500 whitespace-nowrap
-                        ${!isActive ? 'lg:-rotate-90 lg:origin-center lg:mb-10 lg:text-3xl opacity-80' : ''}
-                      `}>
+                        ${!isActive ? 'lg:-rotate-90 lg:origin-center lg:mb-10 opacity-80' : ''}
+                      `}
+                      style={{ fontSize: isActive ? '56px' : '40px' }}>
                         {cat.title}
                       </h3>
                     </div>
