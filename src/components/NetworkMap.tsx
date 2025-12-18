@@ -16,7 +16,7 @@ export default function NetworkMap() {
             />
           </div>
           {/* Right: Text */}
-          <div className="w-full lg:w-[55%] flex items-center lg:mt-16 justify-end">
+          <div className="w-full lg:w-[55%] flex items-center lg:mt-16">
             <p
               style={{
                 fontFamily: "Lora, 'Lora Fallback', Lora, serif",
@@ -26,7 +26,7 @@ export default function NetworkMap() {
                 lineHeight: "36px",
                 color: "rgb(0,0,0)",
               }}
-              className="leading-[1.2] text-right"
+              className="leading-[1.2] text-center lg:text-left"
             >
               Our network brings together leading aesthetic dermatologists, delivering care to thousands of patients across cities.
             </p>
