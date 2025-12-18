@@ -38,12 +38,12 @@ export default function RaisingTheBar() {
 
         {/* LEFT SIDE: Image */}
         <div className="w-full lg:w-1/2">
-          <div className="pt-16 lg:pt-24">
+          <div className="pt-20 sm:pt-28 lg:pt-40">
             {/* Optional top content/link can go here */}
           </div>
-          <div className="relative w-full mt-4 aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]">
+          <div className="relative w-full mt-6 aspect-[4/3] sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-[4/3]">
             <Image
-              src="https://cdn.prod.website-files.com/663bbf664cbd4f9377a776c6/672dfc57bfdc38f7257ef113_main%20image_1_11zon.webp"
+              src="/image.png"
               alt="Raising The Bar"
               fill
               className="object-cover object-top"

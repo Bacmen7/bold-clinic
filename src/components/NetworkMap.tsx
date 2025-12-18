@@ -6,17 +6,17 @@ export default function NetworkMap() {
       <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-start">
           {/* Left: India Map */}
-          <div className="w-full lg:w-[45%] flex justify-center lg:justify-start">
+          <div className="w-full lg:w-[60%] flex justify-center lg:justify-start">
             <Image
               src="/india.png"
               alt="Bold Clinics across India"
-              width={600}
-              height={800}
-              className="w-full h-auto max-w-[500px] md:max-w-[600px] lg:max-w-none"
+              width={1100}
+              height={1400}
+              className="w-full h-auto max-w-[750px] md:max-w-[950px] lg:max-w-full"
             />
           </div>
           {/* Right: Text */}
-          <div className="w-full lg:w-[55%] flex items-center lg:mt-16">
+          <div className="w-full lg:w-[45%] flex items-center lg:mt-16">
             <p
               style={{
                 fontFamily: "Lora, 'Lora Fallback', Lora, serif",

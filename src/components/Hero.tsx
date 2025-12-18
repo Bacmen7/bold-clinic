@@ -8,9 +8,9 @@ export default function Hero() {
     <div className="relative w-full min-h-screen bg-[#ECDCCD] flex flex-col lg:flex-row border-b border-[#FCF4E9] px-6 sm:px-10 lg:px-16 xl:px-20">
 
       {/* LEFT SIDE: Main Image */}
-      <div className="w-full lg:w-1/2 h-[60vh] lg:h-auto relative overflow-hidden order-1 lg:order-1">
+      <div className="w-full lg:w-1/2 h-[40vh] sm:h-[45vh] md:h-[55vh] lg:h-auto relative overflow-hidden order-1 lg:order-1">
         <Image
-          src="https://cdn.prod.website-files.com/663bbf664cbd4f9377a776c6/672dfc57bfdc38f7257ef113_main%20image_1_11zon.webp"
+          src="/hero.png"
           alt="Bold Clinic Model"
           fill
           className="object-cover object-center animate-fade-in"
