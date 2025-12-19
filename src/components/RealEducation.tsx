@@ -39,7 +39,7 @@ export default function RealEducation() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {educationItems.map((item, index) => (
             <div key={index} className="group cursor-pointer">
-              <div className="relative aspect-[4/3] w-full overflow-hidden mb-4 bg-gray-200">
+              <div className="relative aspect-[16/10] w-full overflow-hidden mb-4 bg-gray-200 rounded-2xl">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -50,7 +50,7 @@ export default function RealEducation() {
                 <div className="absolute inset-0 bg-[#F6544A]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="flex items-center justify-between">
-                <h3 className="font-inferi text-2xl lg:text-[28px] text-black group-hover:text-[#F6544A] transition-colors flex-1">
+                <h3 className="font-inferi text-[32px] lg:text-[40px] text-black group-hover:text-[#F6544A] transition-colors flex-1">
                   {item.title}
                 </h3>
                 <ArrowRight

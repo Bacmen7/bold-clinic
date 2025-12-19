@@ -58,7 +58,7 @@ export default function ExpandingTreatments() {
                 key={cat.id}
                 onClick={() => setActiveId(cat.id)}
                 className={`
-                  relative rounded-none overflow-hidden cursor-pointer
+                  relative rounded-2xl overflow-hidden cursor-pointer
                   transition-all duration-700 ease-in-out group
                   ${isActive ? 'flex-[4] lg:flex-[3]' : 'flex-[1] lg:flex-[0.8]'}
                 `}

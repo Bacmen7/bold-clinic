@@ -34,7 +34,7 @@ export default function RealResults() {
         {/* Three Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
           {testimonials.map((item, index) => (
-            <div key={index} className="bg-[#F5E6D3] overflow-hidden group">
+            <div key={index} className="bg-[#F5E6D3] overflow-hidden group rounded-2xl">
               {/* Image Container */}
               <div className="relative aspect-[3/4] w-full bg-gray-100 overflow-hidden">
                 <Image
