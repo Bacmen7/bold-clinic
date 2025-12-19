@@ -39,7 +39,7 @@ export default function ExpandingTreatments() {
   const [activeId, setActiveId] = useState(0);
 
   return (
-    <section className="w-full bg-[#FCF4E9] py-20 lg:py-24 overflow-hidden border-b border-[#ECDCCD] px-6 sm:px-10 lg:px-16 xl:px-20">
+    <section className="w-full bg-[#F5EDE3] py-20 lg:py-24 overflow-hidden border-b border-[#ECDCCD] px-6 sm:px-10 lg:px-16 xl:px-20">
       <div className="max-w-[1440px] mx-auto">
         <div className="text-center mb-16">
           <span className="font-basis text-[#F6544A] text-base lg:text-lg font-semibold tracking-widest uppercase mb-3 block">
@@ -73,9 +73,8 @@ export default function ExpandingTreatments() {
                   `}
                 />
                 <div className={`
-                  absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent
+                  absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/40 backdrop-blur-[2px]
                   transition-opacity duration-500
-                  ${isActive ? 'opacity-90' : 'opacity-70 group-hover:opacity-80'}
                 `} />
 
                 <div className={`

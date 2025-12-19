@@ -33,31 +33,29 @@ export default function RaisingTheBar() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full px-6 sm:px-10 lg:px-16 xl:px-20 bg-[#FFF9EC]">
-      <div className="flex flex-col lg:flex-row">
+    <section ref={sectionRef} className="w-full bg-[#FFF9EC]">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
+        <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12 py-16 lg:py-20">
 
-        {/* LEFT SIDE: Image */}
-        <div className="w-full lg:w-1/2">
-          <div className="pt-20 sm:pt-28 lg:pt-40">
-            {/* Optional top content/link can go here */}
+          {/* LEFT SIDE: Image */}
+          <div className="w-full lg:w-1/2">
+            <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[480px] overflow-hidden">
+              <Image
+                src="/image.png"
+                alt="Raising The Bar"
+                fill
+                className="object-cover object-top"
+              />
+              {/* Play Button */}
+              <button className="absolute bottom-6 right-6 w-14 h-14 bg-white/95 rounded-full flex items-center justify-center hover:bg-white transition-colors shadow-lg group">
+                <Play size={20} className="text-black ml-0.5 group-hover:scale-110 transition-transform" fill="black" />
+              </button>
+            </div>
           </div>
-          <div className="relative w-full mt-6 aspect-[4/3] sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-[4/3]">
-            <Image
-              src="/image.png"
-              alt="Raising The Bar"
-              fill
-              className="object-cover object-top"
-            />
-            {/* Play Button */}
-            <button className="absolute bottom-6 right-6 w-14 h-14 bg-white/95 rounded-full flex items-center justify-center hover:bg-white transition-colors shadow-lg group">
-              <Play size={20} className="text-black ml-0.5 group-hover:scale-110 transition-transform" fill="black" />
-            </button>
-          </div>
-        </div>
 
-        {/* RIGHT SIDE: Beige Background Content */}
-        <div className="w-full lg:w-1/2">
-          <div className="px-6 sm:px-10 lg:px-14 xl:px-16 py-16 lg:py-24">
+          {/* RIGHT SIDE: Content */}
+          <div className="w-full lg:w-1/2">
+            <div className="lg:pl-8">
             <div className="max-w-lg">
 
               {/* Title */}
@@ -113,9 +111,10 @@ export default function RaisingTheBar() {
               </Link>
 
             </div>
+            </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
   );

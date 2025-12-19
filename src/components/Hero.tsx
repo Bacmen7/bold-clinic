@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="relative w-full min-h-screen bg-[#ECDCCD] flex flex-col lg:flex-row border-b border-[#FCF4E9]">
+    <div className="relative w-full bg-[#ECDCCD] flex flex-col lg:flex-row border-b border-[#FCF4E9]">
 
       {/* LEFT SIDE: Main Image */}
-      <div className="w-full lg:w-1/2 h-[40vh] sm:h-[45vh] md:h-[55vh] lg:h-auto relative overflow-hidden order-1 lg:order-1">
+      <div className="w-full lg:w-1/2 h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] xl:h-[550px] relative overflow-hidden order-1 lg:order-1">
         <Image
           src="/hero.png"
           alt="Bold Clinic Model"
