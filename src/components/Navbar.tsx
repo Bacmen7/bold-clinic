@@ -3,12 +3,11 @@
 import Link from "next/link";
 
 const navItems = [
-  { label: "For Patients", href: "/patients" },
-  { label: "Find A Doctor", href: "/doctors" },
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "Find a Clinic", href: "/doctors" },
   { label: "Treatments", href: "/treatments" },
-  { label: "Blog", href: "/blog" },
+  { label: "Insights", href: "/insights" },
   { label: "About", href: "/about" },
-  { label: "Log In", href: "/login" },
 ];
 
 export default function Navbar() {
