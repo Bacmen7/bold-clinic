@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const navItems = [
   { label: "How It Works", href: "/how-it-works" },
@@ -16,20 +17,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 100 100"
-              fill="none"
-            >
-              <circle cx="20" cy="50" r="8" fill="#18454B" />
-              <rect x="35" y="20" width="8" height="60" fill="#18454B" />
-              <circle cx="80" cy="50" r="8" fill="#18454B" />
-            </svg>
-            <span className="text-2xl font-semibold text-[#18454B] tracking-wider">
-              BOLD CLINIC
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="Bold Clinic"
+              width={150}
+              height={50}
+              className="object-contain"
+            />
           </Link>
 
           {/* Navigation Links */}

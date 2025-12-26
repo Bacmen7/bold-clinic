@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 
 const socialLinks = [
@@ -26,7 +27,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="inline-block mb-3">
-              <span className="font-inferi text-2xl text-white">Bold Clinic</span>
+              <Image
+                src="/logo2.png"
+                alt="Bold Clinic"
+                width={150}
+                height={50}
+                className="object-contain"
+              />
             </Link>
             <p className="font-basis text-white/50 text-sm max-w-xs">
               Expert aesthetic dermatology. Doctor-led care you can trust.
