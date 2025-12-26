@@ -6,25 +6,25 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const doctors = [
   {
-    name: "Dr. Anjali Kapoor",
+    name: "Dr. Rahul Rahul",
     qualification: "MD, Dermatology",
     specialty: "Aesthetic Medicine & Lasers",
     image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=600&fit=crop"
   },
   {
-    name: "Dr. Rahul Sharma",
+    name: "Dr. Vikram Vikram",
     qualification: "MBBS, DVD",
     specialty: "Clinical Dermatology",
     image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=600&fit=crop"
   },
   {
-    name: "Dr. Sneha Gupta",
+    name: "Dr. Shika Shika",
     qualification: "MD, Cosmetology",
     specialty: "Injectables & Facial Aesthetics",
     image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=600&fit=crop"
   },
   {
-    name: "Dr. Vikram Singh",
+    name: "Dr. Meena Meena",
     qualification: "MD, Dermatology",
     specialty: "Hair Restoration Expert",
     image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&h=600&fit=crop"

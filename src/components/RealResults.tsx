@@ -3,15 +3,15 @@ import Link from "next/link";
 
 const testimonials = [
   {
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=600&fit=crop",
+    image: "/1.png",
     quote: "Professional laser treatment helped reduce my acne scars significantly in just 3 sessions."
   },
   {
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=600&fit=crop",
+    image: "/2.png",
     quote: "The dermatologist took time to understand my skin concerns and created a personalized treatment plan."
   },
   {
-    image: "https://images.unsplash.com/photo-1616391182219-e080b4d1043a?w=400&h=600&fit=crop",
+    image: "/3.png",
     quote: "My hair restoration journey with Bold Clinics has given me confidence I never thought I'd have again."
   }
 ];

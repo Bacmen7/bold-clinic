@@ -6,9 +6,9 @@ import { Play } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const listItems = [
-  "Doctor-approved treatment pathways",
-  "Evidence-based technology selection",
-  "Patient-first consultation framework",
+  "Doctor-approved treatments",
+  "Proven, science-backed technology",
+  "Patient-first consultations",
 ];
 
 export default function RaisingTheBar() {
@@ -60,7 +60,7 @@ export default function RaisingTheBar() {
 
               {/* Title */}
               <h2 className={`font-inferi text-[36px] lg:text-[42px] leading-[1.15] tracking-tight text-black mb-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                Raising the Bar in Aesthetic Dermatology
+                Consistent Care. Real Results.
               </h2>
 
               {/* Divider */}
@@ -68,7 +68,7 @@ export default function RaisingTheBar() {
 
               {/* Description */}
               <p className={`font-basis text-base text-gray-600 leading-relaxed mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                Bold Clinics was built to fix what&apos;s broken in aesthetic care. No more inconsistent outcomes, over-commercialisation, and lack of medical accountability.
+                Bold Clinics makes aesthetic care simple, honest, and consistent.
               </p>
 
               {/* Divider */}
@@ -76,7 +76,7 @@ export default function RaisingTheBar() {
 
               {/* Subtitle */}
               <p className={`font-basis text-base text-black font-medium mb-4 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                Every Bold clinic follows the same:
+                Every Bold clinic follows the same standards:
               </p>
 
               {/* Bullet Points */}
@@ -96,7 +96,7 @@ export default function RaisingTheBar() {
 
               {/* Bottom Text */}
               <p className="font-basis text-base text-gray-600 leading-relaxed mb-10">
-                So whether you walk into Bold in one city or another, the experience and results stay consistent.
+                So wherever you visit Bold, you get care you can trust, clear guidance, safe treatments, real results.
               </p>
 
               {/* Divider */}

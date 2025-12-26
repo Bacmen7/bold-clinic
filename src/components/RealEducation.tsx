@@ -28,10 +28,10 @@ export default function RealEducation() {
             Empowering You
           </span>
           <h2 className="font-inferi text-[42px] leading-[50px] font-normal text-black mb-6">
-            Not Just Treatments.<br />Real Education.
+            Learn More About Treatments
           </h2>
           <p className="font-basis text-gray-700 text-lg font-light leading-relaxed">
-            We believe informed patients make better decisions. Explore our resources to understand your skin better.
+            We believe informed patients make better decisions. Explore our resources to understand your&nbsp;skin&nbsp;better.
           </p>
         </div>
 

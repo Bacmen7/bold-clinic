@@ -28,7 +28,7 @@ const categories = [
   },
   {
     id: 3,
-    title: "Injectables",
+    title: "Advanced Aesthetics",
     subtitle: "Enhance & Restore",
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop",
     items: ["Botox & wrinkle relaxers", "Dermal fillers (face, lips, jawline)", "Preventive & corrective anti-aging"]
@@ -42,7 +42,7 @@ export default function ExpandingTreatments() {
     <section className="w-full bg-[#F5EDE3] py-20 lg:py-24 overflow-hidden border-b border-[#ECDCCD] px-6 sm:px-10 lg:px-16 xl:px-20">
       <div className="max-w-[1440px] mx-auto">
         <div className="text-center mb-16">
-          <span className="font-basis text-[#F6544A] text-base lg:text-lg font-semibold tracking-widest uppercase mb-3 block">
+          <span className="font-basis text-[#C9A66B] text-base lg:text-lg font-bold tracking-widest uppercase mb-3 block">
             Our Expertise
           </span>
           <h2 className="font-inferi text-[42px] leading-[50px] font-normal text-black">
@@ -88,7 +88,7 @@ export default function ExpandingTreatments() {
                   `}>
                     <div>
                       <p className={`
-                        font-basis text-[#F6544A] text-xs lg:text-sm font-semibold tracking-wider uppercase mb-1
+                        font-basis text-[#C9A66B] text-xs lg:text-sm font-extrabold tracking-wider uppercase mb-1
                         transition-all duration-500 delay-100
                         ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 hidden'}
                       `}>
