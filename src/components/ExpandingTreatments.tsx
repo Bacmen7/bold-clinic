@@ -50,7 +50,7 @@ export default function ExpandingTreatments() {
           </h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row h-[700px] lg:h-[600px] gap-4">
+        <div className="flex flex-col lg:flex-row h-[850px] lg:h-[600px] gap-4">
           {categories.map((cat) => {
             const isActive = activeId === cat.id;
             return (
@@ -81,37 +81,35 @@ export default function ExpandingTreatments() {
                   absolute inset-0 p-6 lg:p-10 flex flex-col
                   ${isActive ? 'justify-end' : 'justify-end lg:justify-center lg:items-center'}
                 `}>
-                  <div className={`
-                    flex items-center justify-between mb-2 w-full
-                    transition-all duration-500
-                    ${!isActive ? 'lg:flex-col-reverse lg:h-[250px] lg:gap-12' : ''}
-                  `}>
-                    <div>
-                      <p className={`
-                        font-basis text-[#C9A66B] text-xs lg:text-sm font-extrabold tracking-wider uppercase mb-1
-                        transition-all duration-500 delay-100
-                        ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 hidden'}
-                      `}>
-                        {cat.subtitle}
-                      </p>
-                      <h3 className={`
-                        font-inferi text-white
-                        transition-all duration-500 whitespace-nowrap
-                        ${!isActive ? 'lg:-rotate-90 lg:origin-center lg:mb-10 opacity-80' : ''}
-                      `}
-                      style={{ fontSize: isActive ? '56px' : '40px' }}>
-                        {cat.title}
-                      </h3>
-                    </div>
-
+                  {/* Arrow at top - only on desktop */}
+                  <div className="hidden lg:flex absolute top-6 lg:top-10 right-6 lg:right-10">
                     <div className={`
                       w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/30
                       flex items-center justify-center text-white backdrop-blur-md
                       transition-all duration-500
-                      ${isActive ? 'bg-[#F6544A] border-[#F6544A] text-white' : 'bg-white/10 group-hover:bg-white/20 lg:rotate-0'}
+                      ${isActive ? 'bg-[#F6544A] border-[#F6544A]' : 'bg-white/10 group-hover:bg-white/20'}
                     `}>
                       <ArrowUpRight size={24} />
                     </div>
+                  </div>
+
+                  {/* Title section */}
+                  <div>
+                    <p className={`
+                      font-basis text-[#C9A66B] text-xs lg:text-sm font-extrabold tracking-wider uppercase mb-1
+                      transition-all duration-500 delay-100
+                      ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 hidden'}
+                    `}>
+                      {cat.subtitle}
+                    </p>
+                    <h3 className={`
+                      font-inferi text-white
+                      transition-all duration-500 whitespace-nowrap
+                      ${!isActive ? 'lg:-rotate-90 lg:origin-center opacity-80' : ''}
+                    `}
+                    style={{ fontSize: isActive ? '56px' : '40px' }}>
+                      {cat.title}
+                    </h3>
                   </div>
 
                   <div className={`

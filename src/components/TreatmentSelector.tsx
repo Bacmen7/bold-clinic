@@ -226,44 +226,50 @@ export default function TreatmentSelector() {
             ))}
           </div>
 
-          {/* Second Row - 4 cards with left and right offset */}
+          {/* Second Row - Women: offset layout, Men: centered */}
           {currentTreatments.length > 5 && (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:ml-[calc((100%/5)/2)] md:mr-[calc((100%/5)/2)] lg:ml-[calc((100%/5)/2)] lg:mr-[calc((100%/5)/2)]">
-              {currentTreatments.slice(5).map((treatment, index) => {
-                const actualIndex = index + 5;
-                return (
-                  <button
-                    key={actualIndex}
-                    onClick={() => toggleTreatment(actualIndex)}
-                    className={`relative px-8 py-3 rounded transition-all group flex flex-col items-center ${
-                      selectedTreatments.includes(actualIndex)
-                        ? "bg-[#FFF9EC]"
-                        : "bg-white"
-                    }`}
-                  >
-                    {/* Selection Indicator */}
-                    <div
-                      className={`absolute top-2 left-3 w-4 h-4 rounded-full border-2 flex items-center justify-center transition-all ${
+            <div className={activeTab === "men" ? "flex justify-center" : ""}>
+              <div className={`gap-3 ${
+                activeTab === "women"
+                  ? "grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 md:ml-[calc((100%/5)/2)] md:mr-[calc((100%/5)/2)] lg:ml-[calc((100%/5)/2)] lg:mr-[calc((100%/5)/2)]"
+                  : "grid grid-cols-2 max-w-fit"
+              }`}>
+                {currentTreatments.slice(5).map((treatment, index) => {
+                  const actualIndex = index + 5;
+                  return (
+                    <button
+                      key={actualIndex}
+                      onClick={() => toggleTreatment(actualIndex)}
+                      className={`relative px-8 py-3 rounded transition-all group flex flex-col items-center ${
                         selectedTreatments.includes(actualIndex)
-                          ? "bg-[#C9A66B] border-[#C9A66B]"
-                          : "bg-white border-gray-300 group-hover:border-[#C9A66B]"
+                          ? "bg-[#FFF9EC]"
+                          : "bg-white"
                       }`}
                     >
-                      {selectedTreatments.includes(actualIndex) && (
-                        <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                      )}
-                    </div>
+                      {/* Selection Indicator */}
+                      <div
+                        className={`absolute top-2 left-3 w-4 h-4 rounded-full border-2 flex items-center justify-center transition-all ${
+                          selectedTreatments.includes(actualIndex)
+                            ? "bg-[#C9A66B] border-[#C9A66B]"
+                            : "bg-white border-gray-300 group-hover:border-[#C9A66B]"
+                        }`}
+                      >
+                        {selectedTreatments.includes(actualIndex) && (
+                          <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
+                        )}
+                      </div>
 
-                    {/* Icon */}
-                    <div className="flex justify-center mb-1">{getIcon(treatment.icon)}</div>
+                      {/* Icon */}
+                      <div className="flex justify-center mb-1">{getIcon(treatment.icon)}</div>
 
-                    {/* Treatment Name */}
-                    <p className="font-inferi text-[10px] text-black text-center leading-tight whitespace-nowrap">
-                      {treatment.name}
-                    </p>
-                  </button>
-                );
-              })}
+                      {/* Treatment Name */}
+                      <p className="font-inferi text-[10px] text-black text-center leading-tight whitespace-nowrap">
+                        {treatment.name}
+                      </p>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           )}
         </div>
