@@ -63,19 +63,13 @@ export default function RaisingTheBar() {
                 Consistent Care. Real Results.
               </h2>
 
-              {/* Divider */}
-              <div className="border-t border-[#D4D0C8] mb-6"></div>
-
               {/* Description */}
-              <p className={`font-basis text-base text-gray-600 leading-relaxed mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <p className={`font-basis text-lg text-gray-600 leading-relaxed mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 Bold Clinics makes aesthetic care simple, honest, and consistent.
               </p>
 
-              {/* Divider */}
-              <div className="border-t border-[#D4D0C8] mb-6"></div>
-
               {/* Subtitle */}
-              <p className={`font-basis text-base text-black font-medium mb-4 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <p className={`font-basis text-lg text-black mb-4 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 Every Bold clinic follows the same standards:
               </p>
 
@@ -91,16 +85,10 @@ export default function RaisingTheBar() {
                 ))}
               </ul>
 
-              {/* Divider */}
-              <div className="border-t border-[#D4D0C8] mb-6"></div>
-
               {/* Bottom Text */}
-              <p className="font-basis text-base text-gray-600 leading-relaxed mb-10">
+              <p className="font-basis text-lg text-gray-600 leading-relaxed mb-10">
                 So wherever you visit Bold, you get care you can trust, clear guidance, safe treatments, real results.
               </p>
-
-              {/* Divider */}
-              <div className="border-t border-[#D4D0C8] mb-8"></div>
 
               {/* Link */}
               <Link

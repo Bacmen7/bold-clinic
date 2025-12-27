@@ -31,7 +31,7 @@ export default function RealEducation() {
             Learn More About Treatments
           </h2>
           <p className="font-basis text-gray-700 text-lg font-light leading-relaxed">
-            We believe informed patients make better decisions. Explore our resources to understand your&nbsp;skin&nbsp;better.
+            We believe informed patients make better decisions. Explore our resources to understand your skin better.
           </p>
         </div>
 

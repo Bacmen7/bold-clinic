@@ -28,7 +28,7 @@ const categories = [
   },
   {
     id: 3,
-    title: "Advanced Aesthetics",
+    title: "Aesthetics",
     subtitle: "Enhance & Restore",
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop",
     items: ["Botox & wrinkle relaxers", "Dermal fillers (face, lips, jawline)", "Preventive & corrective anti-aging"]
@@ -84,7 +84,7 @@ export default function ExpandingTreatments() {
                   <div className={`
                     flex items-center justify-between mb-2 w-full
                     transition-all duration-500
-                    ${!isActive ? 'lg:flex-col-reverse lg:h-[200px] lg:gap-8' : ''}
+                    ${!isActive ? 'lg:flex-col-reverse lg:h-[250px] lg:gap-12' : ''}
                   `}>
                     <div>
                       <p className={`

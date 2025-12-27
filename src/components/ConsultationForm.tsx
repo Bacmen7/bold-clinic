@@ -1,17 +1,35 @@
 "use client";
 
+import Image from "next/image";
+
 export default function ConsultationForm() {
   return (
     <section className="w-full bg-[#282725] py-16 lg:py-20 px-6 sm:px-10 lg:px-16 xl:px-20">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-[1440px] mx-auto">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+
+          {/* LEFT SIDE: Image */}
+          <div className="w-full lg:w-1/2">
+            <div className="relative w-full h-[400px] lg:h-[600px] rounded-2xl overflow-hidden">
+              <Image
+                src="/hero12.png"
+                alt="Medical Consultation"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          {/* RIGHT SIDE: Form */}
+          <div className="w-full lg:w-1/2">
         <div className="mb-8">
-          <span className="font-basis text-[#F6544A] text-sm font-semibold tracking-widest uppercase mb-3 block text-center">
+          <span className="font-basis text-[#F6544A] text-sm font-semibold tracking-widest uppercase mb-3 block">
             Start Your Journey
           </span>
-          <h2 className="font-inferi text-white text-3xl lg:text-4xl font-normal mb-4 text-center">
+          <h2 className="font-inferi text-white text-3xl lg:text-4xl font-normal mb-4">
             Your Aesthetic Journey Starts with a Medical Consultation
           </h2>
-          <p className="font-basis text-white/70 text-base text-center">
+          <p className="font-basis text-white/70 text-base">
             Our expert team will reach out within 24 hours to guide your journey.
           </p>
         </div>
@@ -54,6 +72,8 @@ export default function ConsultationForm() {
             </a>
           </div>
         </form>
+          </div>
+        </div>
       </div>
     </section>
   );
